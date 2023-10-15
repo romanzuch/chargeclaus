@@ -12,7 +12,7 @@ import SwiftData
 struct chargeclausApp: App {
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Location.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
@@ -22,11 +22,14 @@ struct chargeclausApp: App {
             fatalError("Could not create ModelContainer: \(error)")
         }
     }()
+    
+    @StateObject private var settings: AppSettings = AppSettings()
 
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
         .modelContainer(sharedModelContainer)
+        .environmentObject(settings)
     }
 }
