@@ -7,6 +7,15 @@
 
 import SwiftUI
 import SwiftData
+import FirebaseCore
+
+class AppDelegate: NSObject, UIApplicationDelegate {
+  func application(_ application: UIApplication,
+                   didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+    FirebaseApp.configure()
+    return true
+  }
+}
 
 @main
 struct chargeclausApp: App {
@@ -23,6 +32,7 @@ struct chargeclausApp: App {
         }
     }()
     
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var settings: AppSettings = AppSettings()
 
     var body: some Scene {

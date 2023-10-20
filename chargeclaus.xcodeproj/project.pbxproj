@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		307962542AE2D7970062317F /* MapContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307962532AE2D7970062317F /* MapContainer.swift */; };
+		307962562AE2D9A10062317F /* MapContainerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 307962552AE2D9A10062317F /* MapContainerCoordinator.swift */; };
 		30BE203D2ADC31F800642F44 /* chargeclausApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE203C2ADC31F800642F44 /* chargeclausApp.swift */; };
 		30BE203F2ADC31F800642F44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE203E2ADC31F800642F44 /* ContentView.swift */; };
 		30BE20412ADC31F800642F44 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE20402ADC31F800642F44 /* Item.swift */; };
@@ -26,10 +28,11 @@
 		30BE20802ADC44BB00642F44 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 30BE207F2ADC44BB00642F44 /* FirebaseMessaging */; };
 		30BE20822ADC4D2B00642F44 /* AppSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE20812ADC4D2B00642F44 /* AppSettings.swift */; };
 		30BE20842ADC4D5600642F44 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE20832ADC4D5600642F44 /* Tab.swift */; };
-		30BE208A2ADC4ED800642F44 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE20892ADC4ED800642F44 /* DashboardView.swift */; };
+		30BE208A2ADC4ED800642F44 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE20892ADC4ED800642F44 /* HomeView.swift */; };
 		30BE208C2ADC4EE300642F44 /* ChargeNowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE208B2ADC4EE200642F44 /* ChargeNowView.swift */; };
 		30BE208E2ADC4EEB00642F44 /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE208D2ADC4EEB00642F44 /* HistoryView.swift */; };
 		30BE20902ADC4EF200642F44 /* MoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE208F2ADC4EF200642F44 /* MoreView.swift */; };
+		30BE20932ADC509300642F44 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 30BE20922ADC509300642F44 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		307962532AE2D7970062317F /* MapContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContainer.swift; sourceTree = "<group>"; };
+		307962552AE2D9A10062317F /* MapContainerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContainerCoordinator.swift; sourceTree = "<group>"; };
 		30BE20392ADC31F800642F44 /* chargeclaus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chargeclaus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BE203C2ADC31F800642F44 /* chargeclausApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chargeclausApp.swift; sourceTree = "<group>"; };
 		30BE203E2ADC31F800642F44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,10 +70,11 @@
 		30BE20702ADC436C00642F44 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		30BE20812ADC4D2B00642F44 /* AppSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSettings.swift; sourceTree = "<group>"; };
 		30BE20832ADC4D5600642F44 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
-		30BE20892ADC4ED800642F44 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		30BE20892ADC4ED800642F44 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		30BE208B2ADC4EE200642F44 /* ChargeNowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeNowView.swift; sourceTree = "<group>"; };
 		30BE208D2ADC4EEB00642F44 /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		30BE208F2ADC4EF200642F44 /* MoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreView.swift; sourceTree = "<group>"; };
+		30BE20922ADC509300642F44 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +109,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		307962522AE2D78B0062317F /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				307962532AE2D7970062317F /* MapContainer.swift */,
+				307962552AE2D9A10062317F /* MapContainerCoordinator.swift */,
+			);
+			path = Map;
+			sourceTree = "<group>";
+		};
 		30BE20302ADC31F800642F44 = {
 			isa = PBXGroup;
 			children = (
@@ -126,7 +141,7 @@
 		30BE203B2ADC31F800642F44 /* chargeclaus */ = {
 			isa = PBXGroup;
 			children = (
-				30BE206B2ADC322000642F44 /* Controllers */,
+				30BE20912ADC508700642F44 /* Localization */,
 				30BE206A2ADC321C00642F44 /* Views */,
 				30BE20692ADC321800642F44 /* Services */,
 				30BE20682ADC321300642F44 /* Models */,
@@ -184,28 +199,22 @@
 		30BE206A2ADC321C00642F44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				307962522AE2D78B0062317F /* Map */,
 				30BE20882ADC4ECD00642F44 /* More */,
 				30BE20872ADC4EC500642F44 /* History */,
 				30BE20862ADC4EBF00642F44 /* Charge Now */,
-				30BE20852ADC4EB700642F44 /* Dashboard */,
+				30BE20852ADC4EB700642F44 /* Home */,
 				30BE203E2ADC31F800642F44 /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		30BE206B2ADC322000642F44 /* Controllers */ = {
+		30BE20852ADC4EB700642F44 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				30BE20892ADC4ED800642F44 /* HomeView.swift */,
 			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
-		30BE20852ADC4EB700642F44 /* Dashboard */ = {
-			isa = PBXGroup;
-			children = (
-				30BE20892ADC4ED800642F44 /* DashboardView.swift */,
-			);
-			path = Dashboard;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		30BE20862ADC4EBF00642F44 /* Charge Now */ = {
@@ -230,6 +239,14 @@
 				30BE208F2ADC4EF200642F44 /* MoreView.swift */,
 			);
 			path = More;
+			sourceTree = "<group>";
+		};
+		30BE20912ADC508700642F44 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				30BE20922ADC509300642F44 /* Localizable.xcstrings */,
+			);
+			path = Localization;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,11 +339,12 @@
 			};
 			buildConfigurationList = 30BE20342ADC31F800642F44 /* Build configuration list for PBXProject "chargeclaus" */;
 			compatibilityVersion = "Xcode 14.0";
-			developmentRegion = en;
+			developmentRegion = de;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = 30BE20302ADC31F800642F44;
 			packageReferences = (
@@ -350,6 +368,7 @@
 			files = (
 				30BE20462ADC31F900642F44 /* Preview Assets.xcassets in Resources */,
 				30BE20432ADC31F900642F44 /* Assets.xcassets in Resources */,
+				30BE20932ADC509300642F44 /* Localizable.xcstrings in Resources */,
 				30BE20712ADC436C00642F44 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,7 +397,9 @@
 				30BE203F2ADC31F800642F44 /* ContentView.swift in Sources */,
 				30BE20412ADC31F800642F44 /* Item.swift in Sources */,
 				30BE206D2ADC323100642F44 /* Location.swift in Sources */,
-				30BE208A2ADC4ED800642F44 /* DashboardView.swift in Sources */,
+				307962542AE2D7970062317F /* MapContainer.swift in Sources */,
+				30BE208A2ADC4ED800642F44 /* HomeView.swift in Sources */,
+				307962562AE2D9A10062317F /* MapContainerCoordinator.swift in Sources */,
 				30BE20842ADC4D5600642F44 /* Tab.swift in Sources */,
 				30BE20822ADC4D2B00642F44 /* AppSettings.swift in Sources */,
 				30BE203D2ADC31F800642F44 /* chargeclausApp.swift in Sources */,

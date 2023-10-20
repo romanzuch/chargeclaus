@@ -44,17 +44,19 @@ final class Location: Codable {
 @Model
 final class Address: Codable {
     var street: String
+    var streetAdditional: String
     var city: String
     var postcode: String
     var country: String
     var state: String
     
     enum CodingKeys: CodingKey {
-        case street, city, postcode, country, state
+        case street, streetAdditional, city, postcode, country, state
     }
     
-    init(street: String, city: String, postcode: String, country: String, state: String) {
+    init(street: String, streetAdditional: String, city: String, postcode: String, country: String, state: String) {
         self.street = street
+        self.streetAdditional = streetAdditional
         self.city = city
         self.postcode = postcode
         self.country = country
@@ -64,6 +66,7 @@ final class Address: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.street = try container.decode(String.self, forKey: .street)
+        self.streetAdditional = try container.decode(String.self, forKey: .streetAdditional)
         self.city = try container.decode(String.self, forKey: .city)
         self.postcode = try container.decode(String.self, forKey: .postcode)
         self.country = try container.decode(String.self, forKey: .country)
@@ -79,17 +82,15 @@ final class Address: Codable {
 @Model
 final class Provider: Codable {
     var name: String
-    var emaid: String
     var address: Address
     var communication: Communication
     
     enum CodingKeys: CodingKey {
-        case name, emaid, address, communication
+        case name, address, communication
     }
     
-    init(name: String, emaid: String, address: Address, communication: Communication) {
+    init(name: String, address: Address, communication: Communication) {
         self.name = name
-        self.emaid = emaid
         self.address = address
         self.communication = communication
     }
@@ -97,7 +98,6 @@ final class Provider: Codable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.name = try container.decode(String.self, forKey: .name)
-        self.emaid = try container.decode(String.self, forKey: .emaid)
         self.address = try container.decode(Address.self, forKey: .address)
         self.communication = try container.decode(Communication.self, forKey: .communication)
     }
