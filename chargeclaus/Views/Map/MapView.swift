@@ -1,13 +1,15 @@
 //
-//  HomeView.swift
+//  MapView.swift
 //  chargeclaus
 //
 //  Created by Roman Zuchowski on 15.10.23.
 //
 
 import SwiftUI
+import MapKit
 
-struct HomeView: View {
+struct MapView: View {
+    
     var body: some View {
         MapContainer()
             .ignoresSafeArea()
@@ -15,5 +17,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    MapView()
 }

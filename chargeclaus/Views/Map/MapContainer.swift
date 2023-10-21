@@ -5,21 +5,24 @@
 //  Created by Roman Zuchowski on 20.10.23.
 //
 
-import MapKit
 import SwiftUI
+import MapKit
 
 struct MapContainer: UIViewRepresentable {
     
-    func updateUIView(_ uiView: MKMapView, context: Context) {
-        // do something
-    }
-    
     func makeUIView(context: Context) -> MKMapView {
-        return MKMapView()
+        let mapView: MKMapView = MKMapView()
+        mapView.showsUserLocation = true
+        mapView.showsCompass = true
+        mapView.showsUserTrackingButton = true
+        return mapView
     }
     
-    func makeCoordinator() -> MapContainerCoordinator {
-        MapContainerCoordinator(self)
+    func updateUIView(_ uiView: MKMapView, context: Context) {
+        uiView.delegate = context.coordinator
     }
     
+    func makeCoordinator() -> MapCoordinator {
+        return MapCoordinator(self)
+    }
 }
