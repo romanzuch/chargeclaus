@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import SwiftData
 import FirebaseCore
 
 class AppDelegate: NSObject, UIApplicationDelegate {
@@ -19,18 +18,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 
 @main
 struct chargeclausApp: App {
-    var sharedModelContainer: ModelContainer = {
-        let schema = Schema([
-            Location.self,
-        ])
-        let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
-
-        do {
-            return try ModelContainer(for: schema, configurations: [modelConfiguration])
-        } catch {
-            fatalError("Could not create ModelContainer: \(error)")
-        }
-    }()
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     @StateObject private var settings: AppSettings = AppSettings()
@@ -39,7 +26,6 @@ struct chargeclausApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(sharedModelContainer)
         .environmentObject(settings)
     }
 }
