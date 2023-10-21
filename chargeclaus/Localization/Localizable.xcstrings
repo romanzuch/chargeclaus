@@ -1,6 +1,40 @@
 {
   "sourceLanguage" : "de",
   "strings" : {
+    "An error occured while retreiving the data from Firebase." : {
+      "comment" : "Firebase connection error",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Beim Säubern der Hieroglyphen ist ein Fehler aufgetreten."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An error occurred while cleaning the hieroglyphs."
+          }
+        }
+      }
+    },
+    "An unexpected error occurred." : {
+      "comment" : "Unexpected Error",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ein unerwarteter Fehler ist aufgetreten."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "An unexpected error occured."
+          }
+        }
+      }
+    },
     "CHARGE_NOW" : {
       "localizations" : {
         "de" : {
@@ -34,6 +68,7 @@
       }
     },
     "HOME" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -61,6 +96,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "More"
+          }
+        }
+      }
+    },
+    "The retreived data could not be decoded." : {
+      "comment" : "Decoding Error",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Hieroglyphen konnten nicht korrekt übersetzt werden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The hieroglyphs could not be translated correctly."
           }
         }
       }
