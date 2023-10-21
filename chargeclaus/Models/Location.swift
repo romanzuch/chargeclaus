@@ -6,33 +6,37 @@
 //
 
 import Foundation
-import SwiftData
+import FirebaseFirestore
 import FirebaseFirestoreSwift
 
-@Model
-final class Location: Codable {
+class Location: Codable {
     let id: UUID = UUID()
     var address: Address
-    var provider: Provider
-    var connections: [Connection]
+    var coordinates: LocationCoordinates
+    var provider: Provider?
+    var providerRef: DocumentReference?
+    var connections: [Connection]?
+    var connectionsRef: [DocumentReference]?
     var status: Status
     
     enum CodingKeys: CodingKey {
-        case address, provider, connections, status
+        case address, coordinates, provider, connections, status
     }
     
-    init(address: Address, provider: Provider, connections: [Connection], status: Status) {
+    init(address: Address, coordinates: LocationCoordinates, provider: Provider, connections: [Connection], status: Status) {
         self.address = address
+        self.coordinates = coordinates
         self.provider = provider
         self.connections = connections
         self.status = status
     }
     
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.address = try container.decode(Address.self, forKey: .address)
-        self.provider = try container.decode(Provider.self, forKey: .provider)
-        self.connections = try container.decode([Connection].self, forKey: .connections)
+        self.coordinates = try container.decode(LocationCoordinates.self, forKey: .coordinates)
+        self.providerRef = try container.decode(DocumentReference.self, forKey: .provider)
+        self.connectionsRef = try container.decode([DocumentReference].self, forKey: .connections)
         self.status = try container.decode(Status.self, forKey: .status)
     }
     
@@ -41,8 +45,7 @@ final class Location: Codable {
     }
 }
 
-@Model
-final class Address: Codable {
+class Address: Codable {
     var street: String
     var streetAdditional: String
     var city: String
@@ -63,7 +66,7 @@ final class Address: Codable {
         self.state = state
     }
     
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.street = try container.decode(String.self, forKey: .street)
         self.streetAdditional = try container.decode(String.self, forKey: .streetAdditional)
@@ -79,8 +82,31 @@ final class Address: Codable {
     
 }
 
-@Model
-final class Provider: Codable {
+class LocationCoordinates: Codable {
+    var lat: Float
+    var lng: Float
+    
+    enum CodingKeys: CodingKey {
+        case lat, lng
+    }
+    
+    init(lat: Float, lng: Float) {
+        self.lat = lat
+        self.lng = lng
+    }
+    
+    required init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.lat = try container.decode(Float.self, forKey: .lat)
+        self.lng = try container.decode(Float.self, forKey: .lng)
+    }
+    
+    func encode(to encoder: Encoder) throws {
+        
+    }
+}
+
+class Provider: Codable {
     var name: String
     var address: Address
     var communication: Communication
@@ -95,7 +121,7 @@ final class Provider: Codable {
         self.communication = communication
     }
     
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.name = try container.decode(String.self, forKey: .name)
         self.address = try container.decode(Address.self, forKey: .address)
@@ -107,8 +133,7 @@ final class Provider: Codable {
     }
 }
 
-@Model
-final class Communication: Codable {
+class Communication: Codable {
     var email: String
     var web: URL
     var phone: String
@@ -123,7 +148,7 @@ final class Communication: Codable {
         self.phone = phone
     }
     
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.email = try container.decode(String.self, forKey: .email)
         let _web = try container.decode(String.self, forKey: .web)
@@ -136,8 +161,7 @@ final class Communication: Codable {
     }
 }
 
-@Model
-final class Connection: Codable {
+class Connection: Codable {
     var evse: String
     var status: Status
     var power: Int
@@ -154,7 +178,7 @@ final class Connection: Codable {
         self.type = type
     }
     
-    init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.evse = try container.decode(String.self, forKey: .evse)
         let _status = try container.decode(String.self, forKey: .status)
