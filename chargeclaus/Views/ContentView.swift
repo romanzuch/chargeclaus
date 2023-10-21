@@ -6,20 +6,16 @@
 //
 
 import SwiftUI
-import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
-    @Query private var locations: [Location]
     @EnvironmentObject var settings: AppSettings
 
     var body: some View {
-        HomeView()
+        MapView()
     }
 }
 
 #Preview {
     ContentView()
-        .modelContainer(for: Location.self, inMemory: true)
         .environmentObject(AppSettings())
 }
