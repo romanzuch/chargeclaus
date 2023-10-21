@@ -9,12 +9,13 @@ import SwiftUI
 import MapKit
 
 struct MapView: View {
+    
     var body: some View {
-        Map()
+        MapContainer()
             .ignoresSafeArea()
     }
 }
 
 #Preview {
-    HomeView()
+    MapView()
 }
