@@ -11,6 +11,7 @@
 		303D71352AE2E42700784BEC /* MapContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D71342AE2E42700784BEC /* MapContainer.swift */; };
 		303D71372AE3F5B700784BEC /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D71362AE3F5B700784BEC /* MapCoordinator.swift */; };
 		303D71392AE4074500784BEC /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D71382AE4074500784BEC /* CustomError.swift */; };
+		3092F1372AE425F500276582 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3092F1362AE425F500276582 /* LocationAnnotation.swift */; };
 		30BE203D2ADC31F800642F44 /* chargeclausApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE203C2ADC31F800642F44 /* chargeclausApp.swift */; };
 		30BE203F2ADC31F800642F44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE203E2ADC31F800642F44 /* ContentView.swift */; };
 		30BE20412ADC31F800642F44 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE20402ADC31F800642F44 /* Item.swift */; };
@@ -60,6 +61,7 @@
 		303D71342AE2E42700784BEC /* MapContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContainer.swift; sourceTree = "<group>"; };
 		303D71362AE3F5B700784BEC /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		303D71382AE4074500784BEC /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		3092F1362AE425F500276582 /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		30BE20392ADC31F800642F44 /* chargeclaus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chargeclaus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BE203C2ADC31F800642F44 /* chargeclausApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chargeclausApp.swift; sourceTree = "<group>"; };
 		30BE203E2ADC31F800642F44 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				30BE206C2ADC323100642F44 /* Location.swift */,
 				30BE20832ADC4D5600642F44 /* Tab.swift */,
 				303D71382AE4074500784BEC /* CustomError.swift */,
+				3092F1362AE425F500276582 /* LocationAnnotation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -408,6 +411,7 @@
 				30BE208C2ADC4EE300642F44 /* ChargeNowView.swift in Sources */,
 				30BE20902ADC4EF200642F44 /* MoreView.swift in Sources */,
 				303D71352AE2E42700784BEC /* MapContainer.swift in Sources */,
+				3092F1372AE425F500276582 /* LocationAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
