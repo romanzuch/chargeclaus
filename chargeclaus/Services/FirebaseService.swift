@@ -78,7 +78,9 @@ class FirebaseService {
                             location.connections = newConnections
                         }
                     }
+                    
                     return location
+                    
                 } catch {
                     print(error)
                     return nil
