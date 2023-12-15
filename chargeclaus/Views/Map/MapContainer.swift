@@ -10,6 +10,9 @@ import MapKit
 
 struct MapContainer: UIViewRepresentable {
     
+    @Binding var showDetails: Bool
+    var mapViewModel: MapViewModel
+    
     func makeUIView(context: Context) -> MKMapView {
         let mapView: MKMapView = MKMapView()
         mapView.showsUserLocation = true
@@ -23,6 +26,6 @@ struct MapContainer: UIViewRepresentable {
     }
     
     func makeCoordinator() -> MapCoordinator {
-        return MapCoordinator(self)
+        return MapCoordinator(self, showDetails: $showDetails, mapViewModel: mapViewModel)
     }
 }

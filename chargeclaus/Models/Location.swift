@@ -80,6 +80,10 @@ class Address: Codable {
         
     }
     
+    func getFullAddress() -> String {
+        return "\(self.street), \(self.postcode) \(self.city), \(self.country)"
+    }
+    
 }
 
 class LocationCoordinates: Codable {

@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+class MapViewModel: ObservableObject {
+    @Published var selectedLocation: Location?
+}

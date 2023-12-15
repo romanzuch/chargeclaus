@@ -6,12 +6,19 @@
 //
 
 import MapKit
+import CoreLocation
+import SwiftUI
 
 class MapCoordinator: NSObject, MKMapViewDelegate {
     var mapContainer: MapContainer
+    var lastCoordinates: CLLocationCoordinate2D?
+    @Binding var showDetails: Bool
+    private var mapViewModel: MapViewModel
     
-    init(_ mapContainer: MapContainer) {
+    init(_ mapContainer: MapContainer, showDetails: Binding<Bool>, mapViewModel: MapViewModel) {
         self.mapContainer = mapContainer
+        self._showDetails = showDetails
+        self.mapViewModel = mapViewModel
     }
     
     /// This method is called when the region of the map view changes, allowing you to fetch and display location annotations on the map.
@@ -86,6 +93,27 @@ class MapCoordinator: NSObject, MKMapViewDelegate {
             return "\(connectorsCountAvl)/\(connectorsCountMax)"
         }
         return nil
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        if let annotationCoordinates = view.annotation?.coordinate {
+            // Save the current mapView coordinates to return to them
+            // when the annotation view is deselected
+//            self.lastCoordinates = mapView.region.center
+            // Set the center coordinates of the region to the annotation
+//            mapView.region.center = annotationCoordinates
+            let selectedLocation = mapView.selectedAnnotations[0] as! LocationAnnotation
+            self.mapViewModel.selectedLocation = selectedLocation.locationData
+            self.showDetails = true
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, didDeselect view: MKAnnotationView) {
+//        if let lastCoordinates = self.lastCoordinates {
+//            mapView.region.center = lastCoordinates
+        self.mapViewModel.selectedLocation = nil
+            self.showDetails = false
+//        }
     }
     
 }
