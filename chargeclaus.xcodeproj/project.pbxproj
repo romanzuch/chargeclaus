@@ -11,6 +11,9 @@
 		303D71352AE2E42700784BEC /* MapContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D71342AE2E42700784BEC /* MapContainer.swift */; };
 		303D71372AE3F5B700784BEC /* MapCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D71362AE3F5B700784BEC /* MapCoordinator.swift */; };
 		303D71392AE4074500784BEC /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 303D71382AE4074500784BEC /* CustomError.swift */; };
+		306921C72B2CD07000A29278 /* LocationDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 306921C62B2CD07000A29278 /* LocationDetailsViewModel.swift */; };
+		308D6A712B2C57980047BBA3 /* MapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D6A702B2C57980047BBA3 /* MapViewModel.swift */; };
+		308D6A742B2C59AC0047BBA3 /* LocationDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 308D6A732B2C59AC0047BBA3 /* LocationDetails.swift */; };
 		3092F1372AE425F500276582 /* LocationAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3092F1362AE425F500276582 /* LocationAnnotation.swift */; };
 		30BE203D2ADC31F800642F44 /* chargeclausApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE203C2ADC31F800642F44 /* chargeclausApp.swift */; };
 		30BE203F2ADC31F800642F44 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30BE203E2ADC31F800642F44 /* ContentView.swift */; };
@@ -61,6 +64,9 @@
 		303D71342AE2E42700784BEC /* MapContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContainer.swift; sourceTree = "<group>"; };
 		303D71362AE3F5B700784BEC /* MapCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapCoordinator.swift; sourceTree = "<group>"; };
 		303D71382AE4074500784BEC /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+		306921C62B2CD07000A29278 /* LocationDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewModel.swift; sourceTree = "<group>"; };
+		308D6A702B2C57980047BBA3 /* MapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewModel.swift; sourceTree = "<group>"; };
+		308D6A732B2C59AC0047BBA3 /* LocationDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetails.swift; sourceTree = "<group>"; };
 		3092F1362AE425F500276582 /* LocationAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationAnnotation.swift; sourceTree = "<group>"; };
 		30BE20392ADC31F800642F44 /* chargeclaus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = chargeclaus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30BE203C2ADC31F800642F44 /* chargeclausApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chargeclausApp.swift; sourceTree = "<group>"; };
@@ -116,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		308D6A722B2C59A00047BBA3 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				308D6A732B2C59AC0047BBA3 /* LocationDetails.swift */,
+				306921C62B2CD07000A29278 /* LocationDetailsViewModel.swift */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
 		30BE20302ADC31F800642F44 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +216,7 @@
 		30BE206A2ADC321C00642F44 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				308D6A722B2C59A00047BBA3 /* Details */,
 				30BE20882ADC4ECD00642F44 /* More */,
 				30BE20872ADC4EC500642F44 /* History */,
 				30BE20862ADC4EBF00642F44 /* Charge Now */,
@@ -216,6 +232,7 @@
 				30BE20892ADC4ED800642F44 /* MapView.swift */,
 				303D71342AE2E42700784BEC /* MapContainer.swift */,
 				303D71362AE3F5B700784BEC /* MapCoordinator.swift */,
+				308D6A702B2C57980047BBA3 /* MapViewModel.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -401,9 +418,12 @@
 				30BE20412ADC31F800642F44 /* Item.swift in Sources */,
 				30BE206D2ADC323100642F44 /* Location.swift in Sources */,
 				30BE208A2ADC4ED800642F44 /* MapView.swift in Sources */,
+				306921C72B2CD07000A29278 /* LocationDetailsViewModel.swift in Sources */,
+				308D6A742B2C59AC0047BBA3 /* LocationDetails.swift in Sources */,
 				30BE20842ADC4D5600642F44 /* Tab.swift in Sources */,
 				30BE20822ADC4D2B00642F44 /* AppSettings.swift in Sources */,
 				30BE203D2ADC31F800642F44 /* chargeclausApp.swift in Sources */,
+				308D6A712B2C57980047BBA3 /* MapViewModel.swift in Sources */,
 				303D71392AE4074500784BEC /* CustomError.swift in Sources */,
 				303D71322AE2DC6C00784BEC /* FirebaseService.swift in Sources */,
 				30BE208E2ADC4EEB00642F44 /* HistoryView.swift in Sources */,

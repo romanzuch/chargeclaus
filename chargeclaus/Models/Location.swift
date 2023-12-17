@@ -23,6 +23,46 @@ class Location: Codable {
         case address, coordinates, provider, connections, status
     }
     
+    static let example = Location(
+        address: Address(
+            street: "Dunckerstr. 89",
+            streetAdditional: "",
+            city: "Berlin",
+            postcode: "10437",
+            country: "Deutschland",
+            state: "Berlin"
+        ),
+        coordinates: LocationCoordinates(
+            lat: 52.54371,
+            lng: 13.42171
+        ),
+        provider: Provider(
+            name: "Chargecloud GmbH",
+            address: Address(
+                street: "Teststr. 1",
+                streetAdditional: "",
+                city: "Köln",
+                postcode: "60738",
+                country: "Deutschland",
+                state: "NRW"
+            ),
+            communication: Communication(
+                email: "info@chargecloud.de",
+                web: URL(string: "https://www.chargecloud.de")!,
+                phone: "+4912345678"
+            )
+        ),
+        connections: [
+            Connection(
+                evse: "DE*CHC*E1*1234*23",
+                status: .available, 
+                power: 21,
+                type: .typeTwo
+            )
+        ],
+        status: .occupied
+    )
+    
     init(address: Address, coordinates: LocationCoordinates, provider: Provider, connections: [Connection], status: Status) {
         self.address = address
         self.coordinates = coordinates
@@ -78,6 +118,10 @@ class Address: Codable {
     
     func encode(to encoder: Encoder) throws {
         
+    }
+    
+    func getFullAddress() -> String {
+        return "\(self.street), \(self.postcode) \(self.city), \(self.country)"
     }
     
 }
@@ -200,7 +244,8 @@ enum Status: String, Codable {
 }
 
 enum ConnectionType: String, Codable {
-    case typeTwo = "Type-2"
+    case typeTwo = "Type 2"
     case ccs = "CCS"
     case unknown = "UNKNOWN"
 }
+
