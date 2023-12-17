@@ -18,9 +18,9 @@ struct MapView: View {
             .ignoresSafeArea()
             .sheet(isPresented: $showDetails) {
                 LocationDetails(location: mapViewModel.selectedLocation)
-                    .presentationDetents([.medium])
+                    .presentationDetents([.fraction(0.15)])
                     .presentationDragIndicator(.hidden)
-                    .presentationBackgroundInteraction(.enabled(upThrough: .medium))
+                    .presentationBackgroundInteraction(.enabled(upThrough: .fraction(0.15)))
             }
     }
 }
